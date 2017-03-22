@@ -22,6 +22,7 @@
 
 #define SERIAL_DEFAULT 0
 #define SERIAL_RIGHT 120
+#define SERIAL_PEG 100
 #define SERIAL_LEFT 110
 #define SERIAL_CENTERED 140
 #define SERIAL_GEAR_CLOSE 130
@@ -69,6 +70,10 @@ void loop() {
   if (incomingByte == SERIAL_CENTERED) {
     fill_solid(leds, NUM_LEDS, CRGB::Green);
     FastLED.show();
+  }
+
+  if (incomingByte == SERIAL_PEG){
+    rainbowDanceParty();
   }
 
   if (incomingByte == SERIAL_GEAR_CLOSE) {
